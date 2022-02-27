@@ -7,6 +7,6 @@ else:
     for i in number:
         result = result + int(i) ** power
     if int(number) == result:
-        print(number + " is an Armstrong number")
+        print(number, " is an Armstrong number")
     else:
-        print(number + " is not an Armstrong number")
+        print(number, " is not an Armstrong number")
