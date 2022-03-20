@@ -1,24 +1,23 @@
-"""FizzBuzz is a well known programming assignment, asked during interviews.
+"""
+Task : Print the Fizz Buzz numbers.
 
-The given code solves the FizzBuzz problem and uses the words "Solo" and "Learn" instead of "Fizz" and "Buzz".
-It takes an input n and outputs the numbers from 1 to n.
-For each multiple of 3, print "Solo" instead of the number.
-For each multiple of 5, prints "Learn" instead of the number.
-For numbers which are multiples of both 3 and 5, output "SoloLearn".
-
-You need to change the code to skip the even numbers, so that the logic only applies to odd numbers in the range.
-Remember, the continue statement can be used to skip a loop iteration."""
-
-n = int(input())
-
-for x in range(1, n):
-    if x % 3 == 0 and x % 5 == 0 and x % 2 != 0:
-        print("SoloLearn")
-    elif x % 3 == 0 and x % 2 != 0:
-        print("Solo")
-    elif x % 5 == 0 and x % 2 != 0:
-        print("Learn")
-    elif x % 2 == 0:
-        continue
+Fizz Buzz is a famous code challenge used in interviews to test basic programming skills. It's time to write your own implementation.
+Print numbers from 1 to 100 inclusively following these instructions:
+if a number is multiple of 3, print "Fizz" instead of this number,
+if a number is multiple of 5, print "Buzz" instead of this number,
+for numbers that are multiples of both 3 and 5, print "FizzBuzz",
+print the rest of the numbers unchanged.
+Output each value on a separate line.
+Note that : This question is famous on the web, so to get more benefit from this assignment, try to complete this task on your own.
+"""
+    for number in range(1,101):
+    if number % 3 == 0 and number % 5 != 0:
+        print("Fizz")
+    elif number % 3 != 0 and number % 5 == 0:
+        print("Buzz")
+    elif number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
     else:
-        print(x)
+        print(number)
+
+
