@@ -15,10 +15,7 @@ output : "Was it a car or a cat I saw?" is a palindrome
 
 sentence = input("Enter a sentence: ")
 sentence = sentence.lower()
-list_1 = []
-for i in sentence :
-    if i in "qwertyuıopğüasdfgğhjklşizxcvbnmöç":
-        list_1.append(i)
+list_1 = [i for i in sentence if i in "qwertyuıopğüasdfgğhjklşizxcvbnmöç"]
 
 list_2 = list_1.copy()
 list_2.reverse()
