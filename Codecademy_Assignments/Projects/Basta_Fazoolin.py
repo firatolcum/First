@@ -129,4 +129,47 @@ class Franchise:
 """
 14. Let’s create our first two franchises! Our flagship store is located at "1232 West End Road" and our new installment is located at "12 East Mulberry Street". Pass in all four menus along with these addresses to define flagship_store and new_installment.
 """
-flagship_store.address
+menus = [brunch_menu, kids_menu, dinner_menu, early_bird_menu]
+flagship_store = Franchise("1232 West End Road", menus)
+new_installment = Franchise("12 East Mulberry Street", menus)
+
+"""
+15. Give our Franchises a string representation so that we’ll be able to tell them apart. If we print out a Franchise it should tell us the address of the restaurant.
+"""
+
+
+class Franchise:
+    def __init__(self, address, menus):
+        self.address = address
+        self.menus = menus
+
+    def __repr__(self):
+        print("The address of Restaurant: {address}".format(
+            address=self.address))
+
+
+"""
+16. Let’s tell our customers what they can order! Give Franchise an .available_menus() method that takes in a time parameter and returns a list of the Menu objects that are available at that time. 
+"""
+
+
+class Franchise:
+    def __init__(self, address, menus):
+        self.address = address
+        self.menus = menus
+
+    def __repr__(self):
+        print("The address of Restaurant: {address}".format(
+            address=self.address))
+
+    def available_menus(self, time):
+        available_menus = []
+        for menu in self.menus:
+            if time >= menu.start_time and time <= menu.end_time:
+                available_menus.append(menu)
+        return available_menus
+
+
+"""
+17. Let’s test out our .available_menus() method! Call it with 12 noon as an argument and print out the results.
+"""
