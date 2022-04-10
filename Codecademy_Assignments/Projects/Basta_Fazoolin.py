@@ -172,4 +172,48 @@ class Franchise:
 
 """
 17. Let’s test out our .available_menus() method! Call it with 12 noon as an argument and print out the results.
+18. Let’s do another test! See what is printed if we call .available_menus() with 5pm as an argument and print out the results.
 """
+print(flagship_store.available_menus(1200))
+print(flagship_store.available_menus(1700))
+
+"""
+19. Since we’ve been so successful building out a branded chain of restaurants, we’ve decided to diversify. We’re going to create a restaurant that sells arepas!
+First let’s define a Business class.
+20. Give Business a constructor. A Business needs a name and a list of franchises.
+"""
+
+
+class Business:
+    def __init__(self, name, franchises):
+        self.name = name
+        self.franchises = franchises
+
+
+"""
+21. Let’s create our first Business. The name is "Basta Fazoolin' with my Heart" and the two franchises are flagship_store and new_installment.
+"""
+basta = Business("Basta Fazoolin' with my Heart", [
+                 flagship_store, new_installment])
+
+"""
+22. Before we create our new business, we’ll need a Franchise and before our Franchise we’ll need a menu. The items for our Take a’ Arepa available from 10am until 8pm are the following:
+{'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50}
+Save this to a variable called arepas_menu.
+"""
+arepas_items = {
+    'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50
+}
+arepas_menu = Menu("Take a' Arepa", arepas_items, 1000, 2000)
+
+"""
+23. Next let’s create our first Take a’ Arepa franchise! Our new restaurant is located at "189 Fitzgerald Avenue". Save the Franchise object to a variable called arepas_place.
+"""
+arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
+
+"""
+24. Now let’s make our new Business! The business is called "Take a' Arepa"!
+"""
+arepa = Business("Take a' Arepa", [arepas_place])
+# output: Take a' Arepa menu available from 1000 to 2000
+print(arepa.franchises[0].menus[0])
